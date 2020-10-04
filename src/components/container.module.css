@@ -1,0 +1,25 @@
+.base {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, "Helvetica", "Arial", sans-serif
+}
+
+.splash {
+    background: linear-gradient(135deg, #046cab 0%, #f58afc 100%);
+}
+
+.white{
+    background: white;
+}
+
+.container {
+    margin: 3rem auto;
+    max-width: 600px;
+}
