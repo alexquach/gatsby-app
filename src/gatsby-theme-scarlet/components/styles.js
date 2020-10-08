@@ -26,7 +26,7 @@ export const NavList = styled.ul`
   align-items: center;
 `
 
-export const NavLink = styled.a`
+export const ScrollLinkStyle = css`
   padding: 1rem 0;
   color: ${theme.colors.light};
   text-decoration: none;
@@ -34,7 +34,7 @@ export const NavLink = styled.a`
   transition: 0.27s ease;
   &:hover,
   &:focus {
-    filter: brightness(0.95);
+    filter: brightness(0.9);
   }
 `
 
@@ -158,7 +158,6 @@ export const StyledSection = styled.section`
   display: flex;
   align-items: center;
   position: relative;
-  height: 100vh;
   min-height: 400px;
   @media only screen and (min-width: ${theme.breakpoints[1]}) {
     min-height: 70vh;

@@ -1,11 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { StyledHero, StyledParticles, StyledHeroText } from "./styles"
+import { StyledHero, StyledParticles, StyledHeroText, ScrollLinkStyle } from "./styles"
 import { AnimatedWave, DownArrow } from "./"
 import Particles from 'react-particles-js'
 import { css } from "@emotion/core"
 import Typist from "react-typist"
 import "react-typist/dist/Typist.css"
+import { Link as ScrollLink } from "react-scroll";
 
 const Hero = ({ imageAlt, id }) => {
   const data = useStaticQuery(graphql`
@@ -51,7 +52,9 @@ const Hero = ({ imageAlt, id }) => {
           <Typist.Delay ms={100}/> | Entrepreneur
           <Typist.Delay ms={500}/>...
         </Typist>
-        <DownArrow></DownArrow>
+        <ScrollLink to={"work"} smooth={"easeInOutCubic"} offset={-100}>
+          <DownArrow/>
+        </ScrollLink>
       </StyledHeroText>
       
       <AnimatedWave enableWave bottom={true} />

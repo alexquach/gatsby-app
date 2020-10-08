@@ -1,7 +1,6 @@
 import { React, useEffect, useState } from "react"
 import downArrowStyles from "./DownArrow.module.css"
 import { css } from "@emotion/core"
-import $ from "jquery"
 
 export default function DownArrow({ children }) {
 
