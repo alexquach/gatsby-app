@@ -1,14 +1,63 @@
-import React from "react"
+import { React, useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { StyledHero, StyledParticles, StyledHeroText, ScrollLinkStyle } from "./styles"
+import { StyledHero, StyledParticles, StyledHeroText, ScrollLinkStyle, StyledPentagon } from "./styles"
 import { AnimatedWave, DownArrow } from "./"
 import Particles from 'react-particles-js'
 import { css } from "@emotion/core"
 import Typist from "react-typist"
 import "react-typist/dist/Typist.css"
 import { Link as ScrollLink } from "react-scroll";
+import Helmet from "react-helmet";
+import logo from "../images/logo.svg"
+
+import './cosmos.css'
+// import './cosmos.jsx'
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState({ height: undefined, width: undefined });
+
+  useEffect(() => {
+    function getWindowDimensions() {
+      var width = undefined
+      var height = undefined
+      width = window.innerWidth
+      height = window.innerHeight
+
+      return {
+        width,
+        height
+      };
+    }
+
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize()
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+
 
 const Hero = ({ imageAlt, id }) => {
+
+  const [widthVal, setWidthVal] = useState(0.5)
+  // module = require("pathseg/pathseg.js")
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      module = require("pathseg/pathseg.js")
+      require('./cosmos.jsx')
+    }
+  }, []);
+  const { height, width } = useWindowDimensions();
+  if (width !== undefined && width !== widthVal) {
+    setWidthVal(width)
+  }
+
+
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "hero.png" }) {
@@ -22,42 +71,42 @@ const Hero = ({ imageAlt, id }) => {
   `)
   return (
     <StyledHero id={id}>
-      <StyledParticles>
-        <Particles css={css`
-          position: absolute;
-          width: 100%;
-          height: 100%;
-        `}/>
-      </StyledParticles>
-      
-      <StyledHeroText>
-        <Typist 
-          avgTypingDelay={1}
-          cursor={{
-            hideWhenDone: true,
-            hideWhenDoneDelay: 0
-          }} 
-          css={css`
+        <Helmet>
+          <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
+        </Helmet>
+
+        <div class="cosmos">
+          <canvas/>
+        </div>
+
+        <StyledHeroText>
+          <Typist
+            avgTypingDelay={1}
+            cursor={{
+              hideWhenDone: true,
+              hideWhenDoneDelay: 0
+            }}
+            css={css`
           font-size: 3em;
-          color: white;
+          color: black;
           display: inline-block`}>
             Hi. I'm Alex
         </Typist>
-        <Typist
-          startDelay={2000}
-          avgTypingDelay={0}>     
-          Computer&nbsp;Scientist
-          <Typist.Delay ms={100}/> | Data&nbsp;Scientist 
-          <Typist.Delay ms={100}/> | ML&nbsp;Engineer 
-          <Typist.Delay ms={100}/> | Entrepreneur
-          <Typist.Delay ms={500}/>...
+          <Typist
+            startDelay={2000}
+            avgTypingDelay={0}>
+            Computer&nbsp;Scientist
+          <Typist.Delay ms={100} /> | Data&nbsp;Scientist
+          <Typist.Delay ms={100} /> | ML&nbsp;Engineer
+          <Typist.Delay ms={100} /> | Entrepreneur
+          <Typist.Delay ms={500} />...
         </Typist>
-        <ScrollLink to={"work"} smooth={"easeInOutCubic"} offset={-100}>
-          <DownArrow/>
-        </ScrollLink>
-      </StyledHeroText>
-      
-      <AnimatedWave enableWave bottom={true} />
+          <ScrollLink to={"work"} smooth={"easeInOutCubic"} offset={-100}>
+            <DownArrow />
+          </ScrollLink>
+        </StyledHeroText>
+
+        <AnimatedWave enableWave bottom={true} />
     </StyledHero>
   )
 }

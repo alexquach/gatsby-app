@@ -14,12 +14,6 @@ const Footer = () => {
               ❤️
             </span>
           </span>
-          <p>
-            Gatsby Theme Scarlet Design & Developed by{" "}
-            <HyperLink href="https://twitter.com/devShaun">
-              Shaun Wong
-            </HyperLink>
-          </p>
         </FooterBox>
       </Container>
     </StyledFooter>

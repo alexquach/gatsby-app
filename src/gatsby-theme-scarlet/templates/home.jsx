@@ -10,6 +10,7 @@ import { SectionWrap, ProjectList } from "../components/styles";
 import { globalStyles } from "./styles";
 import "animate.css/animate.min.css";
 import ScrollAnimation from "react-animate-on-scroll";
+import { css } from "@emotion/core"
 
 
 const HomeTemplate = () => {
@@ -68,6 +69,7 @@ const HomeTemplate = () => {
           <html lang={siteLanguage} />
           <title>{siteTitle}</title>
           <meta name="Description" content={siteDescription} />
+          <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
         </Helmet>
 
         <Global styles={globalStyles} />
@@ -78,7 +80,7 @@ const HomeTemplate = () => {
           <Hero id="hero" />
 
           <Section backgroundColor={theme.colors.white} id="work">
-            <ScrollAnimation animateIn="animate__fadeInUp" duration={1}>
+            <ScrollAnimation animateIn="animate__fadeInUp" duration={1} css={css`text-align: center`}>
               <Styled.h2>Experience</Styled.h2>
             </ScrollAnimation>
 
@@ -92,19 +94,26 @@ const HomeTemplate = () => {
             enableWave={true}
             waveBottom={false}
           >
-            <br></br>
-            <ScrollAnimation animateIn="animate__fadeInUp" duration={1}>
+            <div css={css`height: 150px`}>
+
+            </div>
+            <ScrollAnimation animateIn="animate__fadeInUp" duration={1} css={css`text-align: center`}>
               <Styled.h2>About Me</Styled.h2>
-              <Styled.p>Hey! I'm Alex, an undergraduate at MIT studying Computer Science
-                As you might notice from my quite varied work experience, I love trying new things
-                and am always looking to learn something. 
+            </ScrollAnimation>
+            <ScrollAnimation animateIn="animate__fadeInUp" duration={1} animateOnce={true}>
+              <Styled.p>Hey! I'm Alex, an undergraduate at MIT studying Computer Science.
+                As you might notice from my quite varied experience, I love trying new things
+                and am always looking to learn something!
                 <br/><br/>
-                I'm passionate about responsible AI as it pertains to making machine learning more transparent,
+                I try to get my hands dirty in many different areas: from full-stack web dev, to
+                data analytics, to product management, to deploying machine learning models. 
+                I'm also passionate about Responsible AI as it pertains to making machine learning more transparent,
                 interpretable, safe, fair, private, and robust. I'm also interested in the entrepreneurship space, 
                 where I'm getting involved in the vibrant Boston ecosystem as a potential founder and as a sourcing investor. 
                 I hope to combine these two fields of interest in the future.
               </Styled.p>
             </ScrollAnimation>
+            <div css={css`height: 75px`}></div>
           </Section>
 
         </SectionWrap>

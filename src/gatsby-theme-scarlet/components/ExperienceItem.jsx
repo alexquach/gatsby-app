@@ -25,7 +25,7 @@ const Experience = ({ role, company, description, logo, timeframe }) => {
   const classes = useStyles();
 
   return (
-    <ScrollAnimation animateIn="animate__fadeInBottomRight" duration={1} offset={50}>
+    <ScrollAnimation animateIn="animate__fadeInBottomRight" duration={1} offset={50} animateOnce={true}>
       <TimelineItem>
         <TimelineOppositeContent style={{ flex: 0.15 }}>
           {timeframe}

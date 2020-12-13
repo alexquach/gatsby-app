@@ -61,7 +61,7 @@ const Experience = ({
         company="Botkeeper"
         timeframe="Fall 2020"
         role="ML Engineer Intern"
-        description="Productionizing and Deploying NLP"
+        description="Developing, Evaluating, and Deploying NLP"
         logo={botkeeperlogo}
       />
 
@@ -69,7 +69,7 @@ const Experience = ({
         company="Cogo Labs"
         timeframe="Fall 2020"
         role="Data Analyst Intern"
-        description="Insights for PE firm"
+        description="Deriving Insights for large PE firm"
         logo={cogolabslogo}
       />
 
@@ -77,7 +77,7 @@ const Experience = ({
         company="Harvard Undergraduate Capital Partners"
         timeframe="Fall 2020"
         role="Analyst"
-        description="Sourcing for Venture Capital"
+        description="Sourcing for ~50 VC/Angel investors"
         logo={hucplogo}
       />
 
@@ -85,7 +85,7 @@ const Experience = ({
         company="Microsoft"
         timeframe="Summer 2020"
         role="Product Manager Intern"
-        description="Azure Machine Learning"
+        description="Cross-team collaboration in Azure Machine Learning"
         logo={microsoftlogo}
       />
 
@@ -101,7 +101,7 @@ const Experience = ({
         company="MIT Quest for Intelligence"
         timeframe="Fall 2019"
         role="Researcher"
-        description="Lowering GHG Emissions for MIT Facilities"
+        description="Lowering Greenhouse Gas Emissions for MIT Facilities"
         logo={mitlogo}
       />
 
@@ -109,7 +109,7 @@ const Experience = ({
         company="Microsoft"
         timeframe="Summer 2019"
         role="Explore (SWE+PM) Intern"
-        description="Azure Stack"
+        description="Release Dashboard for Azure Stack"
         logo={microsoftlogo}
       />
 

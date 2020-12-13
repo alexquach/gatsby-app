@@ -75,7 +75,7 @@ const Header = () => {
           <NavList>
             <NavItem>
               <ScrollLink css={ScrollLinkStyle} to={"work"} smooth={"easeInOutCubic"} offset={-100}>
-                Work
+                Experience
               </ScrollLink>
             </NavItem>
             <NavItem>
