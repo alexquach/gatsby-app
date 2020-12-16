@@ -2,7 +2,7 @@ import { React, useState } from "react"
 import { Container, Styled } from "theme-ui"
 import Anime from "react-anime"
 import { StyledHeader, Nav, NavItem, NavList, NavLink, logoStyle, ScrollLinkStyle } from "./styles"
-import logo from "../images/logo.svg"
+import logo from "../images/Pentagon_overrounded.svg"
 import "animate.css/animate.min.css";
 import ScrollAnimation from "react-animate-on-scroll";
 import { Link as ScrollLink, animateScroll } from "react-scroll";

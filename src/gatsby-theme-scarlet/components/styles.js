@@ -6,7 +6,7 @@ import dots from "./logo.svg"
 export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
-  background: ${theme.colors.primary};
+  background: white; // ${theme.colors.primary};
   position: fixed;
   width: 100%;
   top: 0;
@@ -29,7 +29,7 @@ export const NavList = styled.ul`
 
 export const ScrollLinkStyle = css`
   padding: 1rem 0;
-  color: ${theme.colors.light};
+  color: ${theme.colors.dark};
   text-decoration: none;
   cursor: pointer;
   transition: 0.27s ease;
@@ -49,17 +49,18 @@ export const SectionWrap = styled.main`
 
 export const StyledHero = styled.section`
   scroll-snap-align: start;
-  background: linear-gradient(
-    ${theme.colors.primary} 12.5vh,
-    ${theme.colors.secondary}
-  );
+  background-color: transparent;
+  // background: linear-gradient(
+  //   ${theme.colors.primary} 12.5vh,
+  //   ${theme.colors.secondary}
+  // );
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
   min-height: 400px;
-  height: 100vh;
+  height: 87.5vh;
 `
 
 export const StyledPentagon = styled.section`
@@ -153,18 +154,18 @@ export const WaveWrapper = styled.div`
   ${({ bottom }) =>
     bottom &&
     css`
-      transform: matrix(1, 0, 0, -1, 0, 0);
+      transform: matrix(-1, 0, 0, -1, 0, 0);
     `}
 `
 
 export const InnerWave = styled.div`
   width: 100%;
-  height: 20vh;
+  height: 10vh;
   left: 0;
   position: absolute;
   svg {
     width: 100%;
-    height: 20vh;
+    height: 10vh;
   }
   path {
     ${waveAnimation("20s")};
@@ -339,8 +340,7 @@ export const HyperLink = styled.a`
 export const logoStyle = css`
   max-height: 100%;
   height: 8vh;
-  color: white;
-  filter: invert(95%) sepia(100%) saturate(21%) hue-rotate(345deg) brightness(103%) contrast(107%);
+  filter: invert(95%) sepia(100%) saturate(21%) hue-rotate(345deg) brightness(0%) contrast(107%);
   margin-top: auto;
   margin-bottom: auto;
   `

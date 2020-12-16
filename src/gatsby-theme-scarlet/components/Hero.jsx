@@ -10,8 +10,7 @@ import { Link as ScrollLink } from "react-scroll";
 import Helmet from "react-helmet";
 import logo from "../images/logo.svg"
 
-import './cosmos.css'
-// import './cosmos.jsx'
+import "./metaballs.css"
 
 function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = useState({ height: undefined, width: undefined });
@@ -48,8 +47,8 @@ const Hero = ({ imageAlt, id }) => {
   // module = require("pathseg/pathseg.js")
   useEffect(() => {
     if (typeof window !== undefined) {
-      module = require("pathseg/pathseg.js")
-      require('./cosmos.jsx')
+      // module = require("pathseg/pathseg.js")
+      require('./metaballs.jsx')
     }
   }, []);
   const { height, width } = useWindowDimensions();
@@ -71,42 +70,41 @@ const Hero = ({ imageAlt, id }) => {
   `)
   return (
     <StyledHero id={id}>
-        <Helmet>
-          <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
-        </Helmet>
+      <Helmet>
+        <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
+      </Helmet>
 
-        <div class="cosmos">
-          <canvas/>
-        </div>
+      
 
-        <StyledHeroText>
-          <Typist
-            avgTypingDelay={1}
-            cursor={{
-              hideWhenDone: true,
-              hideWhenDoneDelay: 0
-            }}
-            css={css`
+      <StyledHeroText>
+        <Typist
+          avgTypingDelay={1}
+          cursor={{
+            hideWhenDone: true,
+            hideWhenDoneDelay: 0
+          }}
+          css={css`
           font-size: 3em;
-          color: black;
+          color: white;
           display: inline-block`}>
-            Hi. I'm Alex
+          Hi. I'm Alex
         </Typist>
-          <Typist
-            startDelay={2000}
-            avgTypingDelay={0}>
-            Computer&nbsp;Scientist
+        <Typist
+          startDelay={2000}
+          avgTypingDelay={0}>
+          Computer&nbsp;Scientist
           <Typist.Delay ms={100} /> | Data&nbsp;Scientist
           <Typist.Delay ms={100} /> | ML&nbsp;Engineer
           <Typist.Delay ms={100} /> | Entrepreneur
           <Typist.Delay ms={500} />...
         </Typist>
-          <ScrollLink to={"work"} smooth={"easeInOutCubic"} offset={-100}>
-            <DownArrow />
-          </ScrollLink>
-        </StyledHeroText>
+        <ScrollLink to={"work"} smooth={"easeInOutCubic"} offset={-100}>
+          <DownArrow />
+        </ScrollLink>
+      </StyledHeroText>
 
-        <AnimatedWave enableWave bottom={true} />
+      <AnimatedWave enableWave bottom={false} />
+      <AnimatedWave enableWave bottom={true} />
     </StyledHero>
   )
 }

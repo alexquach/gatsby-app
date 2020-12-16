@@ -74,9 +74,11 @@ const HomeTemplate = () => {
 
         <Global styles={globalStyles} />
         <Header logoTxt={siteLogoText} />
-
+        <div>
+          <canvas/>
+        </div>
         <SectionWrap>
-
+          <div style={{height: "12.5vh"}}/>
           <Hero id="hero" />
 
           <Section backgroundColor={theme.colors.white} id="work">
